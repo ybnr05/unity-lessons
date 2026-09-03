@@ -4,14 +4,10 @@ class Program
 {
     static void Main()
     {
-        string playerName = "Bhuvan";
-        int level =5;
-        float speed = 4.5f;
-        bool hasSword = false;
+        Console.Write("Bhuvan: ");
 
-        Console.WriteLine(playerName);
-        Console.WriteLine(level);
-        Console.WriteLine(speed);
-        Console.WriteLine(hasSword);
+        string playerName = Console.ReadLine();
+
+        Console.WriteLine("Hello, " + playerName + "! Welcome to the game.");
     }
 }
