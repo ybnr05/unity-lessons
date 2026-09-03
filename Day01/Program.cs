@@ -4,10 +4,14 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Bhuvan: ");
-
+        Console.Write("Enter your name:");
         string playerName = Console.ReadLine();
+        Console.Write("Enter your age: ");
+        int age = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Hello, " + playerName + "! Welcome to the game.");
+        Console.WriteLine();
+        Console.WriteLine("======player information======");
+        Console.WriteLine("Name:" + playerName);
+        Console.WriteLine("Age:" + age);
     }
 }
