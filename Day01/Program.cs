@@ -5,16 +5,16 @@ class Program
     static void Main()
     {
         Console.Write("Enter your name:");
-        string playerName = Console.ReadLine();
+        string playerName = Console.ReadLine()!;
         Console.Write("Enter  level: ");
-        int level = int.Parse(Console.ReadLine());
+        int level = int.Parse(Console.ReadLine()!);
 
         Console.Write("Enter Health:");
-        int health = int.Parse(Console.ReadLine());
+        int health = int.Parse(Console.ReadLine()!);
         Console.Write("Enter Gold");
-        int gold = int.Parse(Console.ReadLine());
+        int gold = int.Parse(Console.ReadLine()!);
         Console.Write("Enter Speed:");
-        int speed = int.Parse(Console.ReadLine());
+        int speed = int.Parse(Console.ReadLine()!);
 
         int levelAfter = level + 1;
         int healthfter = health + 10;
