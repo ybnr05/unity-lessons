@@ -21,7 +21,14 @@ class Program
 
         Console.Write("Enter level");
         int level = int.Parse(Console.ReadLine()!);
-        
+        if (level>=10)
+        {
+            Console.WriteLine("Rank: Best player");
+        }
+        else
+        {
+            Console.WriteLine("Rank: worst player");
+        }
         
         Console.WriteLine();
         Console.WriteLine("=========================");
