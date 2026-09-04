@@ -2,14 +2,25 @@
 
 class Program
 {
+    
     static void Main()
     {
         Console.Write("Enter player name: ");
-        string playername = Console.ReadLine();
+        string playername = Console.ReadLine()!;
         Console.Write("Enter Health");
-        int health = int.Parse(Console.ReadLine());
+        int health = int.Parse(Console.ReadLine()!);
+
+        if (health > 0)
+        {
+            Console.WriteLine("Status: Alive");
+        }
+        else
+        {
+            Console.WriteLine("Status: Dead");
+        }
+
         Console.Write("Enter level");
-        int level = int.Parse(Console.ReadLine());
+        int level = int.Parse(Console.ReadLine()!);
         
         
         Console.WriteLine();
