@@ -2,12 +2,14 @@
 
 class Program
 {
-    
     static void Main()
     {
-        for (int i = 1; i<=7; i++)
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine()!);
+
+        for (int i = 1; i <= 10; i++)
         {
-            Console.WriteLine("My name is Bhuvan");
+            Console.WriteLine($"{num} X {i} = {num * i}");
         }
     }
 }
