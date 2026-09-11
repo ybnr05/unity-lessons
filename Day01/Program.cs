@@ -4,11 +4,24 @@ class Program
 {
     static void Main()
     {
-        int i = 1;
-        while (i<=10)
+        int secretNumber = 7;
+        int guess = 0;
+
+        while (guess != secretNumber)
         {
-            Console.WriteLine(i);
-            i++;
+            Console.Write("Guess the number: ");
+            guess = int.Parse(Console.ReadLine());
+
+            if (guess > secretNumber)
+            {
+                Console.WriteLine("Too High!");
+            }
+            else if (guess < secretNumber)
+            {
+                Console.WriteLine("Too Low!");
+            }
         }
+
+        Console.WriteLine("Congratulations!");
     }
 }
