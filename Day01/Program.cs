@@ -4,24 +4,19 @@ class Program
 {
     static void Main()
     {
-        int secretNumber = 7;
-        int guess = 0;
+        string password = "";
 
-        while (guess != secretNumber)
+        while (password != "csharp")
         {
-            Console.Write("Guess the number: ");
-            guess = int.Parse(Console.ReadLine());
+            Console.Write("Enter Password: ");
+            password = Console.ReadLine();
 
-            if (guess > secretNumber)
+            if (password != "csharp")
             {
-                Console.WriteLine("Too High!");
-            }
-            else if (guess < secretNumber)
-            {
-                Console.WriteLine("Too Low!");
+                Console.WriteLine("Wrong Password!");
             }
         }
 
-        Console.WriteLine("Congratulations!");
+        Console.WriteLine("Access Granted!");
     }
 }
