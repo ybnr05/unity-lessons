@@ -4,19 +4,74 @@ class Program
 {
     static void Main()
     {
-        string password = "";
+        Console.WriteLine("========== WHILE LOOP PRACTICE ==========");
+        Console.WriteLine("1. Countdown");
+        Console.WriteLine("2. Password Checker");
+        Console.WriteLine("3. Guess the Number");
 
-        while (password != "csharp")
+        Console.Write("Choose an option: ");
+
+        int choice = int.Parse(Console.ReadLine());
+
+        switch (choice)
         {
-            Console.Write("Enter Password: ");
-            password = Console.ReadLine();
+            case 1:
 
-            if (password != "csharp")
-            {
-                Console.WriteLine("Wrong Password!");
-            }
+                int count = 10;
+
+                while (count >= 1)
+                {
+                    Console.WriteLine(count);
+                    count--;
+                }
+
+                Console.WriteLine("Blast Off!");
+                break;
+
+            case 2:
+
+                string password = "";
+
+                while (password != "csharp")
+                {
+                    Console.Write("Enter Password: ");
+                    password = Console.ReadLine();
+
+                    if (password != "csharp")
+                    {
+                        Console.WriteLine("Wrong Password!");
+                    }
+                }
+
+                Console.WriteLine("Access Granted!");
+                break;
+
+            case 3:
+
+                int secretNumber = 7;
+                int guess = 0;
+
+                while (guess != secretNumber)
+                {
+                    Console.Write("Guess the number: ");
+                    guess = int.Parse(Console.ReadLine());
+
+                    if (guess > secretNumber)
+                    {
+                        Console.WriteLine("Too High!");
+                    }
+                    else if (guess < secretNumber)
+                    {
+                        Console.WriteLine("Too Low!");
+                    }
+                }
+
+                Console.WriteLine("Congratulations!");
+                break;
+
+            default:
+                Console.WriteLine("Invalid Choice.");
+                break;
         }
-
-        Console.WriteLine("Access Granted!");
     }
 }
