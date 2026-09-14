@@ -2,76 +2,53 @@
 
 class Program
 {
+    static void PrintHeader()
+    {
+        Console.WriteLine("=========================");
+        Console.WriteLine("STUDENT REPORT");
+        Console.WriteLine("=========================");
+    }
+
+    static void DisplayStudent(string name, int marks)
+    {
+        Console.WriteLine("Name  : " + name);
+        Console.WriteLine("Marks : " + marks);
+    }
+
+    static string CalculateGrade(int marks)
+    {
+        if (marks >= 90)
+        {
+            return "A";
+        }
+        else if (marks >= 75)
+        {
+            return "B";
+        }
+        else if (marks >= 60)
+        {
+            return "C";
+        }
+        else
+        {
+            return "F";
+        }
+    }
+
     static void Main()
     {
-        Console.WriteLine("========== WHILE LOOP PRACTICE ==========");
-        Console.WriteLine("1. Countdown");
-        Console.WriteLine("2. Password Checker");
-        Console.WriteLine("3. Guess the Number");
+        Console.Write("Enter Student Name: ");
+        string name = Console.ReadLine();
 
-        Console.Write("Choose an option: ");
+        Console.Write("Enter Marks: ");
+        int marks = int.Parse(Console.ReadLine());
 
-        int choice = int.Parse(Console.ReadLine());
+        PrintHeader();
 
-        switch (choice)
-        {
-            case 1:
+        DisplayStudent(name, marks);
 
-                int count = 10;
+        string grade = CalculateGrade(marks);
 
-                while (count >= 1)
-                {
-                    Console.WriteLine(count);
-                    count--;
-                }
-
-                Console.WriteLine("Blast Off!");
-                break;
-
-            case 2:
-
-                string password = "";
-
-                while (password != "csharp")
-                {
-                    Console.Write("Enter Password: ");
-                    password = Console.ReadLine();
-
-                    if (password != "csharp")
-                    {
-                        Console.WriteLine("Wrong Password!");
-                    }
-                }
-
-                Console.WriteLine("Access Granted!");
-                break;
-
-            case 3:
-
-                int secretNumber = 7;
-                int guess = 0;
-
-                while (guess != secretNumber)
-                {
-                    Console.Write("Guess the number: ");
-                    guess = int.Parse(Console.ReadLine());
-
-                    if (guess > secretNumber)
-                    {
-                        Console.WriteLine("Too High!");
-                    }
-                    else if (guess < secretNumber)
-                    {
-                        Console.WriteLine("Too Low!");
-                    }
-                }
-
-                Console.WriteLine("Congratulations!");
-                break;
-
-            default:
-                Console.WriteLine("Invalid Choice.");
-                break;
-        }
+        Console.WriteLine("Grade : " + grade);
     }
 }
