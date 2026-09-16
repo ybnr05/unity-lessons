@@ -1,24 +1,30 @@
 ﻿using System;
 
-class Book
+class Car
 {
-    public string Title;
-    public string Author;
-    public double Price;
+    // Fields
+    public string Brand;
+    public string Model;
+    public int Year;
+    public string Color;
 
-    public Book(string title, string author, double price)
+    // Constructor
+    public Car(string brand, string model, int year, string color)
     {
-        Title = title;
-        Author = author;
-        Price = price;
+        Brand = brand;
+        Model = model;
+        Year = year;
+        Color = color;
     }
 
-    public void DisplayBook()
+    // Method
+    public void DisplayCar()
     {
-        Console.WriteLine("Title : " + Title);
-        Console.WriteLine("Author: " + Author);
-        Console.WriteLine("Price : $" + Price);
-        Console.WriteLine();
+        Console.WriteLine("Brand : " + Brand);
+        Console.WriteLine("Model : " + Model);
+        Console.WriteLine("Year  : " + Year);
+        Console.WriteLine("Color : " + Color);
+        Console.WriteLine("----------------------------");
     }
 }
 
@@ -26,16 +32,15 @@ class Program
 {
     static void Main()
     {
-        Book book1 = new Book("Harry Potter", "J.K. Rowling", 45.99);
-        Book book2 = new Book("Rich Dad Poor Dad", "Robert Kiyosaki", 49.99);
-        Book book3 = new Book("The subtle Art of Not Giving a Fc*k", "Mark Manson", 39.99);
+        // Creating three car objects
+        Car car1 = new Car("Toyota", "Corolla", 2023, "White");
+        Car car2 = new Car("Honda", "Civic", 2022, "Black");
+        Car car3 = new Car("Tesla", "Model 3", 2024, "Red");
 
-        Console.WriteLine("=====================");
-        Console.WriteLine("BOOK DETAILS");
-        Console.WriteLine("=====================");
+        Console.WriteLine("========== CAR DETAILS ==========\n");
 
-        book1.DisplayBook();
-        book2.DisplayBook();
-        book3.DisplayBook();
+        car1.DisplayCar();
+        car2.DisplayCar();
+        car3.DisplayCar();
     }
 }
