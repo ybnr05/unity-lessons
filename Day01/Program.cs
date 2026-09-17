@@ -1,30 +1,20 @@
 ﻿using System;
 
-class Car
+class Student
 {
-    // Fields
-    public string Brand;
-    public string Model;
-    public int Year;
-    public string Color;
+    private int age;
 
-    // Constructor
-    public Car(string brand, string model, int year, string color)
+    public int Age
     {
-        Brand = brand;
-        Model = model;
-        Year = year;
-        Color = color;
-    }
+        get
+        {
+            return age;
+        }
 
-    // Method
-    public void DisplayCar()
-    {
-        Console.WriteLine("Brand : " + Brand);
-        Console.WriteLine("Model : " + Model);
-        Console.WriteLine("Year  : " + Year);
-        Console.WriteLine("Color : " + Color);
-        Console.WriteLine("----------------------------");
+        set
+        {
+            age = value;
+        }
     }
 }
 
@@ -32,15 +22,10 @@ class Program
 {
     static void Main()
     {
-        // Creating three car objects
-        Car car1 = new Car("Toyota", "Corolla", 2023, "White");
-        Car car2 = new Car("Honda", "Civic", 2022, "Black");
-        Car car3 = new Car("Tesla", "Model 3", 2024, "Red");
+        Student student = new Student();
 
-        Console.WriteLine("========== CAR DETAILS ==========\n");
+        student.Age = 22;
 
-        car1.DisplayCar();
-        car2.DisplayCar();
-        car3.DisplayCar();
+        Console.WriteLine("Age: " + student.Age);
     }
 }
