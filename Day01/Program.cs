@@ -1,20 +1,29 @@
 ﻿using System;
 
-class Student
+class Player
 {
-    private int age;
+    public string Name;
+    public int Health;
 
-    public int Age
+    public static int PlayerCount = 0;
+
+    public Player(string name, int health)
     {
-        get
-        {
-            return age;
-        }
+        Name = name;
+        Health = health;
 
-        set
-        {
-            age = value;
-        }
+        PlayerCount++;
+    }
+
+    public void DisplayPlayer()
+    {
+        Console.WriteLine("Name: " + Name);
+        Console.WriteLine("Health: " + Health);
+    }
+
+    public static void DisplayPlayerCount()
+    {
+        Console.WriteLine("Total Players: " + PlayerCount);
     }
 }
 
@@ -22,10 +31,19 @@ class Program
 {
     static void Main()
     {
-        Student student = new Student();
+        Player player1 = new Player("Bhuvan", 100);
+        Player player2 = new Player("Alex", 75);
+        Player player3 = new Player("John", 50);
 
-        student.Age = 22;
+        player1.DisplayPlayer();
+        Console.WriteLine();
 
-        Console.WriteLine("Age: " + student.Age);
+        player2.DisplayPlayer();
+        Console.WriteLine();
+
+        player3.DisplayPlayer();
+        Console.WriteLine();
+
+        Player.DisplayPlayerCount();
     }
 }
