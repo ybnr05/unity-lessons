@@ -1,49 +1,48 @@
-﻿using System;
+﻿namespace CodeMonkey.CSharpCourse.L1520_FizzBuzz;
 
-class Player
+public class FizzBuzz
 {
-    public string Name;
-    public int Health;
-
-    public static int PlayerCount = 0;
-
-    public Player(string name, int health)
+    /* ** Fizz Buzz **
+     *
+     * Loop through Numbers 1-100
+     * If Divisible by 3, print Fizz
+     * If Divisible by 5, print Buzz
+     * If Divisible by 3 AND 5, print FizzBuzz
+     * Every other case, print Number
+     *
+     * Hint: Use the % modulo operator to get the remainder of the division
+     * (6 % 3) == 0
+     *
+     * Write to the console using Console.WriteLine();
+     */
+    public FizzBuzz()
     {
-        Name = name;
-        Health = health;
-
-        PlayerCount++;
-    }
-
-    public void DisplayPlayer()
-    {
-        Console.WriteLine("Name: " + Name);
-        Console.WriteLine("Health: " + Health);
-    }
-
-    public static void DisplayPlayerCount()
-    {
-        Console.WriteLine("Total Players: " + PlayerCount);
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+                Console.WriteLine("FizzBuzz");
+            }
+            else if (i % 3 == 0)
+            {
+                Console.WriteLine("Fizz");
+            }
+            else if (i % 5 == 0)
+            {
+                Console.WriteLine("Buzz");
+            }
+            else
+            {
+                Console.WriteLine(i);
+            }
+        }
     }
 }
 
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
-        Player player1 = new Player("Bhuvan", 100);
-        Player player2 = new Player("Alex", 75);
-        Player player3 = new Player("John", 50);
-
-        player1.DisplayPlayer();
-        Console.WriteLine();
-
-        player2.DisplayPlayer();
-        Console.WriteLine();
-
-        player3.DisplayPlayer();
-        Console.WriteLine();
-
-        Player.DisplayPlayerCount();
+        _ = new FizzBuzz();
     }
 }
