@@ -1,122 +1,58 @@
-﻿namespace CodeMonkey.CSharpCourse.L1540_RockPaperScissors;
-
-public class RockPaperScissors
+﻿public class Quiz
 {
-    /* ** Rock Paper Scissors **
+    /* ** Quiz **
      *
-     * There are 3 Actions
-     * Rock, Paper, Scissors
+     * Implement Questions and Answers
+     * Ask player the question, player answers
+     * Check if answer is correct
+     * Keep asking questions until there`s no more
      *
-     * Rock beats Scissors
-     * Scissors beats Paper
-     * Paper beats Rock
-     *
-     * Computer generates Action
-     * Asks player for input
-     * Prints result
-     *
-     * Hint: You can generate random numbers with new System.Random().Next(3);
-     *       Generates between 0 (inclusive) and 3 (exclusive)
+     * Hint: You can store multiple pieces of data in one variable using collections
+     * For example a List<string> or a string[] array
+     * Then you can cycle through it with: for (int i = 0; i < list.Count; i++) {   }
      * */
-    public RockPaperScissors()
+    public Quiz()
     {
-        string computerAction;
-
-        switch (GenerateRandomNumber())
+        List<string> questionList = new List<string>()
         {
-            default:
-            case 0:
-                computerAction = "Rock";
-                break;
-            case 1:
-                computerAction = "Paper";
-                break;
-            case 2:
-                computerAction = "Scissors";
-                break;
-        }
+            "What is the Capital of USA?",
+            "How much is 16*6?",
+            "Who is the author of rich dad poor dad?",
+        };
 
-        Console.WriteLine("Computer has generated Action...");
-        Console.WriteLine("Choose your Action: (Rock, Paper, Scissors)");
+        List<string> answerList = new List<string>()
+        {
+            "Washington, D.C.",
+            "96",
+            "Robert Kiyosaki",
+        };
 
-        string? playerInput = Console.ReadLine();
-        string playerAction = playerInput?.Trim() ?? string.Empty;
+        Console.WriteLine("## Quiz! ##");
+        for (int questionIndex = 0; questionIndex < questionList.Count; questionIndex++)
+        {
+            Console.WriteLine(questionList[questionIndex]);
+            string answer = Console.ReadLine() ?? string.Empty;
 
-        if (playerAction.Equals("rock", StringComparison.OrdinalIgnoreCase))
-        {
-            playerAction = "Rock";
-        }
-        else if (playerAction.Equals("paper", StringComparison.OrdinalIgnoreCase))
-        {
-            playerAction = "Paper";
-        }
-        else if (playerAction.Equals("scissors", StringComparison.OrdinalIgnoreCase))
-        {
-            playerAction = "Scissors";
-        }
-        else
-        {
-            Console.WriteLine("Invalid action. Please choose Rock, Paper, or Scissors.");
-            return;
-        }
-
-        Console.WriteLine("-");
-        Console.WriteLine("Player Plays <color=#ffff00>" + playerAction + "</color>");
-        Console.WriteLine("Computer Plays <color=#ffff00>" + computerAction + "</color>");
-
-        switch (playerAction)
-        {
-            default:
-                break;
-            case "Rock":
-                switch (computerAction)
-                {
-                    case "Rock":
-                        Console.WriteLine("<color=#00ffff>Tie</color>");
-                        break;
-                    case "Paper":
-                        Console.WriteLine("Paper beats Rock, <color=#ffff00>Computer wins!</color>");
-                        break;
-                    case "Scissors":
-                        Console.WriteLine("Rock beats Scissors, <color=#00ff00>Player wins!</color>");
-                        break;
-                }
-                break;
-            case "Paper":
-                switch (computerAction)
-                {
-                    case "Rock":
-                        Console.WriteLine("Paper beats Rock, <color=#00ff00>Player wins!</color>");
-                        break;
-                    case "Paper":
-                        Console.WriteLine("<color=#00ffff>Tie</color>");
-                        break;
-                    case "Scissors":
-                        Console.WriteLine("Scissors beats Paper, <color=#ffff00>Computer wins!</color>");
-                        break;
-                }
-                break;
-            case "Scissors":
-                switch (computerAction)
-                {
-                    case "Rock":
-                        Console.WriteLine("Rock beats Scissors, <color=#ffff00>Computer wins!</color>");
-                        break;
-                    case "Paper":
-                        Console.WriteLine("Scissors beats Paper, <color=#00ff00>Player wins!</color>");
-                        break;
-                    case "Scissors":
-                        Console.WriteLine("<color=#00ffff>Tie</color>");
-                        break;
-                }
-                break;
+            if (answer == answerList[questionIndex])
+            {
+                WriteLineCorrect();
+            }
+            else
+            {
+                WriteLineIncorrect();
+                Console.WriteLine("Correct Answer: " + answerList[questionIndex]);
+            }
         }
     }
 
-    private int GenerateRandomNumber()
+    private static void WriteLineCorrect()
     {
-        // Generates a random number between 0 (include) and 3 (exclusive)
-        return new Random().Next(3);
+        Console.WriteLine("Correct!");
+    }
+
+    private static void WriteLineIncorrect()
+    {
+        Console.WriteLine("Incorrect!");
     }
 }
 
@@ -124,6 +60,6 @@ public class Program
 {
     public static void Main()
     {
-        _ = new RockPaperScissors();
+        _ = new Quiz();
     }
 }
